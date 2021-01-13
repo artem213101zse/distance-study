@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}Logged out{% endblock %}
+{% block title %}Выход из системы{% endblock %}
 
 {% block content %}
-  <h1>Logged out</h1>
+<meta http-equiv="refresh" content="4;/">
+  <h1>Выход из системы</h1>
   <div class="module">
-    <p>You have been successfully logged out. You can <a href="{% url "login" %}">log-in again</a>.</p>
+    <p>Вы успешно вышли из системы. Вы можете <a href="{% url "login" %}">войти снова</a> при необходимости.</p>
+    <p>Вы перейдета на главную страницу сайта через 4 секунды</p>
   </div>
 {% endblock %}

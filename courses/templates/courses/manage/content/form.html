@@ -2,26 +2,26 @@
 
 {% block title %}
   {% if object %}
-    Edit content "{{ object.title }}"
+    Редактировать "{{ object.title }}"
   {% else %}
-    Add a new content
+    Добавить новое содержимое
   {% endif %}
 {% endblock %}
 
 {% block content %}
   <h1>
     {% if object %}
-      Edit content "{{ object.title }}"
+      Редактировать "{{ object.title }}"
     {% else %}
-      Add a new content
+      Добавить новое содержимое
     {% endif %}
   </h1>
   <div class="module">
-    <h2>Course info</h2>
+    <h2>Информация о содержимом</h2>
     <form action="" method="post" enctype="multipart/form-data">
       {{ form.as_p }}
       {% csrf_token %}
-      <p><input type="submit" value="Save content"></p>
+      <p><input type="submit" value="Сохранить"></p>
     </form>
   </div>
 {% endblock %}
