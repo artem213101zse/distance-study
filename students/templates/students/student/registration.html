@@ -6,14 +6,15 @@
 
 {% block content %}
     <h1>
-        Sign up
+        Регистрация
     </h1>
     <div class="module">
-        <p>Enter your details to create an account:</p>
+        <p>Введите свои данные для создания учетной записи:</p>
         <form action="" method="post">
             {{ form.as_p }}
             {% csrf_token %}
-            <p><input type="submit" value="Create my account"></p>
+            <p><input type="submit" value="Создать учетную запись"></p>
         </form>
+
     </div>
 {% endblock %}

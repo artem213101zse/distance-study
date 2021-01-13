@@ -3,17 +3,17 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>{% block title %}Educa{% endblock %}</title>
+  <title>{% block title %}Distance-Study{% endblock %}</title>
   <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
 <body>
   <div id="header">
-    <a href="/" class="logo">Educa</a>
+    <a href="/" class="logo">Distance-Study</a>
     <ul class="menu">
       {% if request.user.is_authenticated %}
-        <li><a href="{% url "logout" %}">Sign out</a></li>
+        <li><a href="{% url "logout" %}">Выйти</a></li>
       {% else %}
-        <li><a href="{% url "login" %}">Sign in</a></li>
+        <li><a class="" href="{% url "login" %}">Войти в систему</a></li>
       {% endif %}
     </ul>
   </div>

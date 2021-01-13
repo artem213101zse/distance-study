@@ -2,31 +2,31 @@
 
 {% block title %}
     {% if subject %}
-        {{ subject.title }} courses
+        {{ subject.title }}
     {% else %}
-        All courses
+        Все курсы
     {% endif %}
 {% endblock %}
 
 {% block content %}
 <h1>
     {% if subject %}
-        {{ subject.title }} courses
+        {{ subject.title }}
     {% else %}
-        All courses
+        Все курсы
     {% endif %}
 </h1>
 <div class="contents">
-    <h3>Subjects</h3>
+    <h3>Предметы</h3>
     <ul id="modules">
         <li {% if not subject %}class="selected"{% endif %}>
-            <a href="{% url "course_list" %}">All</a>
+            <a href="{% url "course_list" %}">Все</a>
         </li>
         {% for s in subjects %}
             <li {% if subject == s %}class="selected"{% endif %}>
                 <a href="{% url "course_list_subject" s.slug %}">
                     {{ s.title }}
-                    <br><span>{{ s.total_courses }} courses</span>
+                    <br><span>{{ s.total_courses }} курсов</span>
                 </a>
             </li>
         {% endfor %}
@@ -35,11 +35,11 @@
 <div class="module">
     {% for course in courses %}
         {% with subject=course.subject %}
-            <h3><a href="{% url "course_detail" course.slug %}">{{ course.title }}</a></h3>
+            <h3><a class="button" href="{% url "course_detail" course.slug %}">{{ course.title }}</a></h3>
             <p>
-                <a href="{% url "course_list_subject" subject.slug %}">{{ subject }}</a>.
-                {{ course.total_modules }} modules.
-                Instructor: {{ course.owner.get_full_name }}
+                Предмет: <a href="{% url "course_list_subject" subject.slug %}">{{ subject }}</a>.
+<!--                {{ course.total_modules }} modules.-->
+                Преподаватель: {{ course.owner.get_full_name }}
             </p>
         {% endwith %}
     {% endfor %}

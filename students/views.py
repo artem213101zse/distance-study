@@ -8,11 +8,12 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from courses.models import Course
 from .forms import CourseEnrollForm
-
+# Подключение новой формы для регистрации
+from .forms import RegistrForm
 
 class StudentRegistrationView(CreateView):
     template_name = 'students/student/registration.html'
-    form_class = UserCreationForm
+    form_class = RegistrForm
     success_url = reverse_lazy('student_course_list')
 
     def form_valid(self, form):
