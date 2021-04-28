@@ -16,6 +16,13 @@ from .forms import ModuleFormSet
 from students.forms import CourseEnrollForm
 from django.core.cache import cache
 
+from django import template
+
+register = template.Library()
+
+@register.filter(name='has_group')
+def has_group(user, group_name):
+    return user.groups.filter(name=group_name).exists()
 
 class OwnerMixin(object):
     def get_queryset(self):

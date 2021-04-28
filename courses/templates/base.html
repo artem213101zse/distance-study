@@ -5,13 +5,15 @@
   <meta charset="utf-8" />
   <title>{% block title %}Distance-Study{% endblock %}</title>
   <link href="{% static "css/base.css" %}" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.ico" %}">
 </head>
 <body>
   <div id="header">
     <a href="/" class="logo">Distance-Study</a>
     <ul class="menu">
       {% if request.user.is_authenticated %}
-        <li><a href="{% url "logout" %}">Выйти</a></li>
+        <li><a href="/course/mine/">Управлять курсами(для учителей)</a></li>
+        <li><a href="{% url "logout" %}">Выйти из системы</a></li>
       {% else %}
         <li><a class="" href="{% url "login" %}">Войти в систему</a></li>
       {% endif %}
