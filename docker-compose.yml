@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: app
+    restart: always
+    build:
+      context: .
+    env_file:
+      - .env
+    ports:
+      - "80:8000"
+#    volumes:
+#      - ./mydatabase.sqlite3:/app/mydatabase.sqlite3
